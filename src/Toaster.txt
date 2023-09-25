@@ -1,0 +1,44 @@
+public class Toaster {
+    //State as Instance Variables
+    // Usually instance variables are private to prevent access
+    // outside of the class
+    private boolean isOn;
+    private float temp;
+    private boolean isPushedDown;
+    private int numSlots;
+
+    // Every object has default constructor
+    // constructor without parameters
+    public Toaster(){
+        numSlots = 2;
+    }
+
+    //Constructor - used to initialize the instance variables
+    public Toaster(int numSlots){
+        temp = 0;
+        this.numSlots = numSlots;
+        ..
+    }
+
+    //Behaviors as methods
+    public void startToasting(BreadSlice slice, int slot){
+            ... do stuff
+        temp = 100;
+    }
+
+    public void setTemp(float newTemp){
+        temp = newTemp;
+    }
+}
+
+public class ToasterUsage{
+    public static void main(String[] args){
+
+        Toaster myToaster = new Toaster(2); // calling the constructor
+        myToaster.startToasting(new BreadSlice(), 0);
+        //myToaster.temp = 0; Gives error since temp is private
+        myToaster.setTemp(100);
+        
+        Toaster yourToaster = new Toaster(4);
+    }
+}
