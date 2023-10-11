@@ -7,7 +7,7 @@ public class Point2D {
     public static final double ORIGIN = 0;
 
     //Instance variables -- define state
-    private double x;
+    protected double x;
     private double y;
 
     // Constructor
@@ -22,6 +22,11 @@ public class Point2D {
         this(ORIGIN, ORIGIN);
     }
 
+    // Overrides Object's toString method
+    @Override
+    public String toString(){
+        return x+", "+y;
+    }
 
 
     @Override
@@ -56,6 +61,8 @@ public class Point2D {
         Point2D p1 = new Point2D(2, 3);
         Point2D p2 = new Point2D(2, 3);
         Point2D p3 = new Point2D();
+        Point2D point3D = new Point3D(2, 3, 4);
+        System.out.println(point3D);
         System.out.println(p1 == p2);
     }
 }
